@@ -99,7 +99,12 @@ function handleDelete(id) {
  
         <footer className="grid h-10 grid-cols-3 items-center border-t border-[#e6e6e6] px-[15px] text-[15px]">
           <span>
-            <strong className="font-light">1</strong> item left
+            <strong className="font-light">
+            {todos.filter((todo) => !todo.completed).length}
+            </strong>{' '}
+            {todos.filter((todo) => !todo.completed).length === 1
+            ? 'item'
+            : 'items'} left
           </span>
 
                    <ul className="flex justify-center gap-1">
@@ -133,7 +138,7 @@ function handleDelete(id) {
           </button>
         </footer>
         </>
-        )}npm
+        )}
       </div>
     </section>
   )
